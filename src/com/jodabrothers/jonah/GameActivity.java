@@ -15,9 +15,9 @@ package com.jodabrothers.jonah;
 
 import java.io.IOException;
 
-/*import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;*/
+import com.google.android.gms.ads.AdView;
 
 import org.andengine.engine.Engine;
 import org.andengine.engine.LimitedFPSEngine;
@@ -134,7 +134,7 @@ public class GameActivity extends BaseGameActivity {
 	        	    ResourcesManager.getInstance().loadGameResources();	 
 	        	    
 	        	    //Ad initialization
-	        		/*AdBuddiz.setPublisherKey("4c2e8de3-75a4-4bec-a86f-73327cb644da");  
+	        		AdBuddiz.setPublisherKey("4c2e8de3-75a4-4bec-a86f-73327cb644da");  
 	        		AdBuddiz.setTestModeActive();
 	        		AdBuddiz.cacheAds(activity);                         
 	        		
@@ -163,7 +163,7 @@ public class GameActivity extends BaseGameActivity {
 	        				else
 	        					SceneManager.getInstance().createMenuScene();
 	        			}
-	        		});*/
+	        		});
 	        	            	    
 	        	    ResourcesManager.getInstance().setGameCount(1);
 	        	    ((SplashScene)SceneManager.getInstance().getCurrentScene()).getAlphaLayer().registerEntityModifier(new AlphaModifier(0.2f, 0f, 1f) {
@@ -220,8 +220,8 @@ public class GameActivity extends BaseGameActivity {
 	
 	public void showAd(SceneType sceneType) {
 		adScene = sceneType;
-		/*if (AdBuddiz.isReadyToShowAd(this))
-			AdBuddiz.showAd(this);*/
+		if (AdBuddiz.isReadyToShowAd(this))
+			AdBuddiz.showAd(this);
 		if (adScene == SceneType.SCENE_GAME)  
 			SceneManager.getInstance().createGameScene();
 		else
